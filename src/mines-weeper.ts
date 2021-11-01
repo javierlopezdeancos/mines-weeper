@@ -18,7 +18,7 @@ export class MinesWeeper {
   private symbols = {
     mine: '💣',
     bomb: '💥',
-    hide: '⬜',
+    hide: '❓',
   };
 
   constructor(size: number, difficulty: number) {
@@ -105,9 +105,9 @@ export class MinesWeeper {
       for (let c = 0; c < this.size; c++) {
         const hasMine = this.cellHasMine(r, c);
 
-        if (hasMine) {
+        if (hasMine && this.matrix[r][c] !== this.symbols.bomb) {
           this.matrix[r][c] = this.symbols.mine;
-        } else {
+        } else if (!hasMine) {
           const nearbyMines = this.getNearbyMines(r, c).toString();
           this.matrix[r][c] = nearbyMines;
         }

@@ -3,7 +3,5 @@ node_modules/
 /test/
 custom-elements.json
 # top level source
-my-element.js
-my-element.js.map
-my-element.d.ts
-my-element.d.ts.map
+dist
+.vscode
