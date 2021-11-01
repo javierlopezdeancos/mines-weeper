@@ -9,7 +9,7 @@
   "scripts": {
     "build": "tsc --outDir dist",
     "build:watch": "tsc --outDir dist --watch",
-    "build:docs": "copyfiles -f dev/*.* docs && copyfiles -f dist/*.* docs",
+    "build:docs": "copyfiles -f dev/*.* docs && copyfiles -f dist/*.* docs && copyfiles -f node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js docs && copyfiles -f node_modules/lit/polyfill-support.js docs",
     "lint": "npm run lint:lit-analyzer && npm run lint:eslint",
     "lint:eslint": "eslint 'src/**/*.ts'",
     "lint:lit-analyzer": "lit-analyzer",
