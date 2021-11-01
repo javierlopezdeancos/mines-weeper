@@ -1,6 +1,6 @@
 {
   "name": "@javierlopezdeancos/mines-weeper",
-  "private": true,
+  "private": false,
   "version": "0.1.0",
   "description": "Custom element mines weeper game",
   "main": "mines-weeper-game.js",

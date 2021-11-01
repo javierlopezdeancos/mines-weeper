@@ -10,7 +10,7 @@ export default {
   nodeResolve: {exportConditions: mode === 'dev' ? ['development'] : []},
   preserveSymlinks: true,
   appIndex: mode === 'dev' ? 'docs/index.html' : 'docs/index.html',
-  rootDir: mode === 'dev' ? './' : './docs',
+  rootDir: mode === 'dev' ? './docs' : './docs',
   plugins: [
     legacyPlugin({
       polyfills: {
