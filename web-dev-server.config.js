@@ -9,7 +9,7 @@ if (!['dev', 'prod'].includes(mode)) {
 export default {
   nodeResolve: {exportConditions: mode === 'dev' ? ['development'] : []},
   preserveSymlinks: true,
-  appIndex: mode === 'dev' ? 'dev/index.html' : 'docs/index.html',
+  appIndex: mode === 'dev' ? 'docs/index.html' : 'docs/index.html',
   rootDir: mode === 'dev' ? './' : './docs',
   plugins: [
     legacyPlugin({
