@@ -4,6 +4,8 @@
 
 Custom element mines weeper game component using LitElement with TypeScript.
 
+Look the demo here :point_right: [demo](https://javierlopezdeancos.github.io/mines-weeper/)
+
 ## Setup
 
 Install dependencies:
