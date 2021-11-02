@@ -9,12 +9,11 @@ if (!['dev', 'prod'].includes(mode)) {
 export default {
   nodeResolve: {exportConditions: mode === 'dev' ? ['development'] : []},
   preserveSymlinks: true,
-  appIndex: mode === 'dev' ? 'docs/index.html' : 'docs/index.html',
-  rootDir: mode === 'dev' ? './docs' : './docs',
+  appIndex: 'docs/index.html',
+  rootDir: './',
   plugins: [
     legacyPlugin({
       polyfills: {
-        // Manually imported in index.html file
         webcomponents: false,
       },
     }),

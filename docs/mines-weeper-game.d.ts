@@ -20,4 +20,3 @@ declare global {
         'jla-mines-weeper-game': JlaMinesWeeperGame;
     }
 }
-//# sourceMappingURL=mines-weeper-game.d.ts.map

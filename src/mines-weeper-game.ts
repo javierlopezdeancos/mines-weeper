@@ -196,9 +196,11 @@ export class JlaMinesWeeperGame extends LitElement {
   }
 
   private start(): void {
+    console.log('START');
     this.minesWeeper.initialize();
     this.updateStatus();
     this.updateBoard();
+    console.log('ON', this.on);
   }
 
   private restart(): void {

@@ -4,14 +4,14 @@
   "version": "0.1.0",
   "description": "Custom element mines weeper game",
   "main": "mines-weeper-game.js",
+  "types": "mines-weeper-game.d.ts",
   "module": "mines-weeper-game.js",
   "type": "module",
   "scripts": {
-    "build": "tsc --outDir dist",
-    "build:prod": "rollup -c",
-    "build:watch": "tsc --outDir dist --watch",
-    "build:docs": "copyfiles -f dev/*.* docs && copyfiles -f node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js docs && copyfiles -f node_modules/lit/polyfill-support.js docs && tsc --outDir docs",
-    "build:docs:watch": "npm run build:docs && tsc --outDir docs --watch",
+    "build:types": " tsc --emitDeclarationOnly --outDir lib",
+    "build:types:dev": " tsc --emitDeclarationOnly --outDir docs",
+    "build": "rimraf lib && node ./esbuild.js && npm run build:types",
+    "build:dev": "esbuild src/mines-weeper-game.ts --bundle --minify --sourcemap --platform=neutral --outdir=docs --watch",
     "lint": "npm run lint:lit-analyzer && npm run lint:eslint",
     "lint:eslint": "eslint 'src/**/*.ts'",
     "lint:lit-analyzer": "lit-analyzer",
@@ -24,8 +24,7 @@
     "test:dev": "wtr",
     "test:watch": "wtr --watch",
     "test:prod": "MODE=prod wtr",
-    "test:prod:watch": "MODE=prod wtr --watch",
-    "checksize": "rollup -c ; cat mines-weeper.bundled.js | gzip -9 | wc -c ; rm mines-weeper.bundled.js"
+    "test:prod:watch": "MODE=prod wtr --watch"
   },
   "keywords": [
     "mines-weeper",
@@ -44,8 +43,6 @@
     "@esm-bundle/chai": "^4.1.5",
     "@open-wc/testing": "^3.0.1",
     "@open-wc/testing-karma": "^4.0.9",
-    "@rollup/plugin-node-resolve": "^13.0.4",
-    "@rollup/plugin-replace": "^3.0.0",
     "@types/mocha": "^9.0.0",
     "@typescript-eslint/eslint-plugin": "^4.3.0",
     "@typescript-eslint/parser": "^4.30.0",
@@ -56,16 +53,13 @@
     "@web/test-runner-mocha": "^0.7.4",
     "@web/test-runner-playwright": "^0.8.4",
     "@webcomponents/webcomponentsjs": "^2.6.0",
-    "copyfiles": "^2.4.1",
-    "deepmerge": "^4.2.2",
+    "esbuild": "^0.13.12",
     "eslint": "^7.32.0",
     "lit-analyzer": "^1.1.10",
     "mocha": "^9.1.1",
     "prettier": "^2.3.2",
-    "rollup": "^2.28.2",
-    "rollup-plugin-summary": "^1.2.3",
-    "rollup-plugin-terser": "^7.0.2",
-    "typescript": "^4.3.5"
+    "rimraf": "^3.0.2",
+    "typescript": "^4.4.4"
   },
   "customElements": "custom-elements.json"
 }

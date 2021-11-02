@@ -21,4 +21,3 @@ export declare class MinesWeeper {
     pick(row: number, column: number): [boolean, string | undefined];
     initialize(): void;
 }
-//# sourceMappingURL=mines-weeper.d.ts.map

@@ -1,6 +1,6 @@
 # Mines Weeper 🔎💣
 
-![screenshot](./assets/mines-weeper.gif)
+![screenshot](./readme/images/mines-weeper.gif)
 
 Custom element mines weeper game component using LitElement with TypeScript.
 
