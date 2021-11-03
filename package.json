@@ -10,7 +10,7 @@
   "scripts": {
     "build": "npm run build:ts && npm run build:bundled",
     "build:ts": "tsc",
-    "build:ts:watch": "npm run build --watch",
+    "build:ts:watch": "tsc --watch",
     "build:bundled": "rollup -c rollup.config.prod.js",
     "build:bundled:watch": "rollup -c rollup.config.prod.js --watch",
     "build:docs": "rollup -c rollup.config.dev.js",
