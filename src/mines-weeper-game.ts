@@ -87,17 +87,17 @@ export class JlaMinesWeeperGame extends LitElement {
     }
 
     button {
-      --button-width: 7em;
-      --button-width-long: 8em;
+      --button-width: 8em;
+      --button-width-long: 9em;
       border: none;
       box-shadow: none;
       background: var(--color-primary);
-      border-radius: 40px;
+      border-radius: 80px;
       margin-top: 1em;
       font-size: 1.3em;
       font-weight: 700;
       width: var(--button-width);
-      height: 2em;
+      height: 3em;
       color: var(--color-secondary);
       cursor: pointer;
     }
@@ -129,6 +129,15 @@ export class JlaMinesWeeperGame extends LitElement {
     @media screen and (max-width: 1000px) {
       :host {
         font-size: 35px;
+      }
+
+      .board {
+        grid-auto-rows: 9em;
+        grid-template-columns: repeat(4, minmax(min(100%, 5em), 1fr));
+      }
+
+      .cell {
+        font-size: 4em;
       }
     }
   `;
